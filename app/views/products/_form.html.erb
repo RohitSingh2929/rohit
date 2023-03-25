@@ -1,0 +1,26 @@
+<%= form_for @product do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    
+
+   
+    <%= form.label :description %><br>
+    <%= form.text_area :description %><br>
+    
+
+  
+    <%= form.label :price %><br>
+    <%= form.number_field :price %><br>
+   
+  </div>
+
+ <div> 
+    <%= form.label :category, style: "display: block" %>
+    <%= form.collection_select :category_id, Category.all, :id, :categoryname %>
+ </div> 
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

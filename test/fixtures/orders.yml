@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  cart: one
+  product: one
+  merchant: one
+
+two:
+  status: MyString
+  cart: two
+  product: two
+  merchant: two

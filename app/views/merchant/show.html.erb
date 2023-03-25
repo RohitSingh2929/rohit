@@ -1,0 +1,11 @@
+<h1><%= @merchant.email %></h1>
+
+<p><%= @merchant.password %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_merchant_path(@merchant) %></li>
+  <li><%= link_to "Destroy", merchant_path(@merchant), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
