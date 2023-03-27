@@ -1,5 +1,6 @@
 class Cart < ApplicationRecord
-    # has_and_belongs_to_many :products
-    belongs_to :product
     belongs_to :merchant
-end
+    belongs_to :product
+    validates :product_id, presence: true
+    validates :merchant_id, presence: true
+  end

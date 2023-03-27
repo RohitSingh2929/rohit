@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_25_101332) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_26_180055) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -113,8 +113,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_101332) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "merchant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchant_id"], name: "index_wishlists_on_merchant_id"
+    t.index ["product_id"], name: "index_wishlists_on_product_id"
+  end
+
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "merchants"
   add_foreign_key "orders", "products"
   add_foreign_key "productimages", "products"
+  add_foreign_key "wishlists", "merchants"
+  add_foreign_key "wishlists", "products"
 end
